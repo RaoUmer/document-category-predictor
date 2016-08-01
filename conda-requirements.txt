@@ -1,0 +1,9 @@
+scipy
+numpy
+pandas
+bokeh
+scikit-learn
+matplotlib
+nltk
+sqlite3
+wtforms
