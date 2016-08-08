@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Document's Category Predictor</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+
+<h3>Your Document is:</h3>
+<div>{{ content }}</div>
+
+<h3>Please select the correct label of your text from one of them following below:</h3>
+<form method='post' action='/thanks' > 
+   <input type='radio' name='label' value='computer' />Computer<br />
+   <input type='radio' name='label' value='science' />Science<br />
+   <input type='radio' name='label' value='sports' />Sports<br />
+   <input type='radio' name='label' value='religion' />Religion<br />
+   <input type='radio' name='label' value='politics' />Politics<br />
+   <input type='radio' name='label' value='automobiles' />Automobiles<br />
+   <input type="submit" value="Submit" name="submit">
+   <input type=hidden value='{{ content }}' name='text'>
+</form>
+<!--
+<form method="post" action="/thanks">
+  Correct label:<br>
+  <input type="text" value="label" name="label">
+  <br><br>
+  <input type="submit" value="Submit" name="submit">
+  <input type=hidden value='{{ content }}' name='text'>
+</form>
+-->
+<div id='button'>
+	  <form action="/">
+	    <input type=submit value='Submit another text'>
+	  </form>
+</div>
+
+  </body>
+</html>

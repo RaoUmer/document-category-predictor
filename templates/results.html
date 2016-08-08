@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Document's Category Predictor</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+
+<h3>Your Document is:</h3>
+<div>{{ content }}</div>
+
+<h3>Prediction:</h3>
+<div>The category of this text is <strong>{{ prediction }}</strong>
+</div>
+
+<div id='button'>
+	  <form action="/thanktoo" method="post">
+	    <input type=submit value='Correct' name='feedback_button'>
+		<input type=hidden value='{{ prediction }}' name='prediction'>
+		<input type=hidden value='{{ content }}' name='text'>
+	  </form>
+	  <form action="/feedbackform" method="post">
+		<input type=submit value='Incorrect' name='feedback_button'>
+		<input type=hidden value='{{ prediction }}' name='prediction'>
+		<input type=hidden value='{{ content }}' name='text'>
+	  </form>
+</div>
+
+<div id='button'>
+	  <form action="/">
+	    <input type=submit value='Submit another text'>
+	  </form>
+</div>
+
+  </body>
+</html>
